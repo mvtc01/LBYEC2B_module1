@@ -1,0 +1,6 @@
+language: python
+compiler: clang
+os: linux
+cache: pip
+install: pip install -r ./assets/requirements.txt
+script: pytest
