@@ -28,6 +28,10 @@ void display_original(int array[], int size)
     Returns:
         None
     */
+    for (int i2 = 0; i2<size; i2++) {		//i2 is the indexing variable to navigate through array[]
+    	printf("%d ", array[i2]);
+	}
+    return;
 }
 
 void display_reverse(int array[], int size)
@@ -39,6 +43,11 @@ void display_reverse(int array[], int size)
     Returns:
         None
     */
+    for (int i2 = size-1; i2>-1; i2--) {
+    	printf("%d ", array[i2]);
+	}
+    return;
+	
 }
 
 void display_even(int array[], int size)
@@ -50,7 +59,12 @@ void display_even(int array[], int size)
     Returns:
         None
     */
-
+    for (int i2 = 0; i2<size; i2++) {
+    	if (i2%2 == 0) {		//i2 is divided by 2 and checked if remainder is 0. If so, console is to print data inside array[i2]
+    		printf("%d ", array[i2]);	
+		}
+	}
+    return;
 }
 
 void display_odd(int array[], int size)
@@ -62,7 +76,12 @@ void display_odd(int array[], int size)
     Returns:
         None
     */
-
+    for (int i2 = 0; i2<size; i2++) {
+    	if (i2%2 != 0) {		//i2 is divided by 2 and checked if remainder is not 0. If so, console is to print data inside array[i2]
+    		printf("%d ", array[i2]);
+		}
+	}
+    return;
 }
 void rotate_forward(int array[], int size)
 {
@@ -73,7 +92,10 @@ void rotate_forward(int array[], int size)
     Returns:
         None
     */
-
+    int offset = 0;
+    printf("offset: ");
+    scanf("%d", &offset);
+    return;
 }
 
 void rotate_backward(int array[], int size)
@@ -85,7 +107,7 @@ void rotate_backward(int array[], int size)
     Returns:
         None
     */
-
+//    return;
 }
 
 char encrypt_character(char a, int key, int sequence_length, char initial_char)
@@ -122,5 +144,6 @@ char *strrev(char *str)
     }
     return str;
 }
+
 
 #endif
