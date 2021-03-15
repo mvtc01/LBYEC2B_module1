@@ -35,7 +35,6 @@ void process_array(int array[], int size)
         3 = display values of even indices (using display_even function)
         4 = display values of odd indicies (using display_odd function)
         5 = display values from k to k-1 (using display_k function)
-
     Input:
         array[] (int) = the array to be processed
         size (int) = the size of the array to be processed
@@ -74,9 +73,9 @@ int main(void)
 
     int num_array[10];
 
-    get_numbers(10, num_array);
+    get_numbers(10, num_array);    //this calls get_number function in header file
 
-    process_array(num_array, 10);
+    process_array(num_array, 10);  //this processes inputs taken from user
 
     return 0;
 }
