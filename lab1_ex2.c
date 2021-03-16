@@ -15,6 +15,9 @@ char encrypt_uppercase_letter(char letter)
     Returns:
         outchar = the encrypted character
     */
+    if (letter >= 'A' && letter <= 'W') letter+=3;
+    else if (letter >= 'X' && letter <= 'Z') letter-=23;
+    return letter;
 }
 char encrypt_lowercase_letter(char letter)
 {
@@ -29,6 +32,9 @@ char encrypt_lowercase_letter(char letter)
     Returns:
         outchar = the encrypted character
     */
+    if (letter >= 'a' && letter <= 'w') letter+=3;
+    else if (letter >= 'x' && letter <= 'z') letter-=23;
+    return letter;
 }
 char encrypt_number(char number)
 {
@@ -43,6 +49,9 @@ char encrypt_number(char number)
     Returns:
         outchar = the encrypted character
     */
+    if (number >= '0' && number <= '6') number+=3;
+    else if (number >= '7' && number <= '9') number-=7;
+    return number;
 }
 char encrypt_alphanumeric(char alphanum)
 {
@@ -50,7 +59,6 @@ char encrypt_alphanumeric(char alphanum)
     encrypt_alphanumeric encrpyts the input character using the prescribed encryption
     It can accept any characters as input. But, it would only encrypt alphabet and numberic (aka alphanumerics) characters
     If it's non-alphanumeric, it would only return the same character
-
     Input:
         alphanum (char) = the input character to be encrypted
     Returns:
@@ -79,7 +87,6 @@ void encrypt_message(char message[], int size)
     /*
     encrypt_message would display the message (in encrypted form) using encrypt_alphanumeric
     so that no one else could understand the message.
-
     Input:
         message[] (char) = the message that needs encryption
         size (int) = the size of the given message (which is an array)
@@ -96,7 +103,6 @@ void encrypt_message(char message[], int size)
 
 int main(void)
 {
-
     char phrase[100];
     int length;
     printf("Phrase: ");
@@ -105,6 +111,5 @@ int main(void)
     length = strlen(phrase);
 
     encrypt_message(phrase, length);
-
     return 0;
 }
