@@ -15,8 +15,8 @@ char encrypt_uppercase_letter(char letter)
     Returns:
         outchar = the encrypted character
     */
-    if (letter >= 'A' && letter <= 'W') letter+=3;
-    else if (letter >= 'X' && letter <= 'Z') letter-=23;
+    if (letter >= 'A' && letter <= 'W') letter+=3;          //when input letter is between A to W, output is a 3-step shift right from reference letter
+    else if (letter >= 'X' && letter <= 'Z') letter-=23;    //when input letter is between X to Z, output is a 23-step shift left from the reference letter
     return letter;
 }
 char encrypt_lowercase_letter(char letter)
@@ -32,8 +32,8 @@ char encrypt_lowercase_letter(char letter)
     Returns:
         outchar = the encrypted character
     */
-    if (letter >= 'a' && letter <= 'w') letter+=3;
-    else if (letter >= 'x' && letter <= 'z') letter-=23;
+    if (letter >= 'a' && letter <= 'w') letter+=3;          //when input letter is between a to w, output is a 3-step shift right from reference letter
+    else if (letter >= 'x' && letter <= 'z') letter-=23;    //when input letter is between x to z, output is a 23-step shift left from the reference letter
     return letter;
 }
 char encrypt_number(char number)
@@ -49,8 +49,8 @@ char encrypt_number(char number)
     Returns:
         outchar = the encrypted character
     */
-    if (number >= '0' && number <= '6') number+=3;
-    else if (number >= '7' && number <= '9') number-=7;
+    if (number >= '0' && number <= '6') number+=3;          //when input number is between 0 to 6, output is a 3-step shift right from reference letter
+    else if (number >= '7' && number <= '9') number-=7;     //when input letter is between 7 to 9, output is a 7-step shift left from reference letter
     return number;
 }
 char encrypt_alphanumeric(char alphanum)
