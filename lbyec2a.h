@@ -92,9 +92,25 @@ void rotate_forward(int array[], int size)
     Returns:
         None
     */
-    int offset = 0;
+    
+	int offset = 0;
     printf("offset: ");
     scanf("%d", &offset);
+     
+	for(int i2 = 0; i2 < offset; i2++){		 //loops offset-1 number of times, shifts array elements by 1 in every loop
+    	int i3, end;
+    	end = array[size-1];			//array[size-1] at size=10 is array[9] or the tenth element. Store tenth element to variable end.
+    	
+    	for (i3 = size-1; i3 > 0; i3--){
+    		array[i3] = array[i3-1];
+		}
+											//upon exiting above for loop, i3=0
+		array[i3] = end;					//assign the value of end to array[0]
+	}
+    for (int i2 = 0; i2<size; i2++) {		//i2 is the indexing variable to navigate through array[]
+    	printf("%d ", array[i2]);
+	}
+    
     return;
 }
 
@@ -107,7 +123,24 @@ void rotate_backward(int array[], int size)
     Returns:
         None
     */
-//    return;
+    int offset = 0;
+    printf("offset: ");
+    scanf("%d", &offset);
+	
+	for(int i2 = 0; i2 < offset; i2++){     //loops offset-1 number of times, shifts array elements by 1 in every loop
+        int i3, num0;    
+        num0 = array[0];  				 //assigns current data at array[0] to variable num0 
+        
+        for(i3 = 0; i3 < size-1; i3++){    
+            array[i3] = array[i3+1];    //rotate array elements by 1 starting from array[0]<-- first element up to array[size-2] or array[8]<-- ninth element
+        }    
+  									    // upon exiting above for loop, i3=size-1=9
+        array[i3] = num0;			    //  assign value of num0 to array[9] <-- tenth element
+    }  
+    for (int i2 = 0; i2<size; i2++) {		//i2 is the indexing variable to navigate through array[]
+    	printf("%d ", array[i2]);
+	}
+    return;
 }
 
 char encrypt_character(char a, int key, int sequence_length, char initial_char)
